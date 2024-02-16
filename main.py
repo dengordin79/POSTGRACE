@@ -15,12 +15,12 @@ SMTP_CONFIG = {
     "smtp_port": os.getenv('PORT')
 }
 
-conn = ps.connect( # создание объекта подключения 
-        dbname="postgres",
-        user="b2b_user",
-        password="3CG6DhNBQBk7D7BgCe7MteD",
-        host="209.124.84.15",
-        port="6783",
+conn = ps.connect(
+        dbname=os.getenv('DB'),
+        user=os.getenv('UDB'),
+        password=os.getenv('PDB'),
+        host=os.getenv('HDB'),
+        port=os.getenv('PDB'),
     )
 with conn:
     with conn.cursor() as cursor:
